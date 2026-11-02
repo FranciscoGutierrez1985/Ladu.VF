@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="LADU.Business/LADU.Business.csproj" />
+  <Project Path="LADU.Data/LADU.Data.csproj" />
+  <Project Path="LADU.Entities/LADU.Entities.csproj" />
+  <Project Path="LADU.UI/LADU.UI.csproj" />
+</Solution>
