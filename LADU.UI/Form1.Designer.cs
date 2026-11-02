@@ -28,24 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             txtLegajo = new TextBox();
             txtLogin = new TextBox();
             btnLogin = new Button();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // txtLegajo
             // 
-            txtLegajo.Location = new Point(296, 219);
+            txtLegajo.Location = new Point(314, 334);
             txtLegajo.Name = "txtLegajo";
             txtLegajo.Size = new Size(245, 23);
             txtLegajo.TabIndex = 0;
             // 
             // txtLogin
             // 
-            txtLogin.Location = new Point(296, 266);
+            txtLogin.Location = new Point(314, 381);
             txtLogin.Name = "txtLogin";
             txtLogin.Size = new Size(245, 23);
             txtLogin.TabIndex = 1;
@@ -53,7 +56,7 @@
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(373, 316);
+            btnLogin.Location = new Point(391, 431);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(75, 23);
             btnLogin.TabIndex = 2;
@@ -64,7 +67,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(226, 219);
+            label1.Location = new Point(244, 334);
             label1.Name = "label1";
             label1.Size = new Size(59, 15);
             label1.TabIndex = 3;
@@ -73,7 +76,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(198, 274);
+            label2.Location = new Point(216, 389);
             label2.Name = "label2";
             label2.Size = new Size(87, 15);
             label2.TabIndex = 4;
@@ -82,26 +85,39 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(342, 9);
+            label3.Font = new Font("Calisto MT", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(314, 27);
             label3.Name = "label3";
-            label3.Size = new Size(118, 15);
+            label3.Size = new Size(220, 22);
             label3.TabIndex = 5;
             label3.Text = "BIENVENIDO A LADU";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(199, 85);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(446, 209);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 6;
+            pictureBox1.TabStop = false;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(886, 583);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(btnLogin);
             Controls.Add(txtLogin);
             Controls.Add(txtLegajo);
+            Controls.Add(pictureBox1);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -114,5 +130,6 @@
         private Label label1;
         private Label label2;
         private Label label3;
+        private PictureBox pictureBox1;
     }
 }

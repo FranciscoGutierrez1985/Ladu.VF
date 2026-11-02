@@ -62,7 +62,7 @@
             // btnCerrarSesion
             // 
             btnCerrarSesion.Name = "btnCerrarSesion";
-            btnCerrarSesion.Size = new Size(180, 22);
+            btnCerrarSesion.Size = new Size(142, 22);
             btnCerrarSesion.Text = "Cerrar sesion";
             btnCerrarSesion.Click += cerrarSesionToolStripMenuItem_Click;
             // 
@@ -125,9 +125,10 @@
             // lblBienvenida
             // 
             lblBienvenida.AutoSize = true;
+            lblBienvenida.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblBienvenida.Location = new Point(412, 30);
             lblBienvenida.Name = "lblBienvenida";
-            lblBienvenida.Size = new Size(38, 15);
+            lblBienvenida.Size = new Size(65, 22);
             lblBienvenida.TabIndex = 0;
             lblBienvenida.Text = "label1";
             // 

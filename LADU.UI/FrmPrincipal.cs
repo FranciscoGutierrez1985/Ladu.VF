@@ -61,7 +61,8 @@ namespace LADU.UI
 
         private void btnCursosyMaterias_Click(object sender, EventArgs e)
         {
-
+            FrmCursos frm = new FrmCursos();
+            frm.ShowDialog(); // Abre la ventana de cursos
         }
 
         private void toolStripStatusLabel1_Click(object sender, EventArgs e)
