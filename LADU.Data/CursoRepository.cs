@@ -39,5 +39,23 @@ namespace LADU.Data
             }
             return listaCursos;
         }
+        public bool InsertarCurso(Curso curso)
+        {
+            using (SqlConnection conexion = ConnectionFactory.ObtenerConexion())
+            {
+                using (SqlCommand cmd = new SqlCommand("sp_Cursos_Insertar", conexion))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Nombre", curso.Nombre);
+                    cmd.Parameters.AddWithValue("@Division", curso.Division);
+                    cmd.Parameters.AddWithValue("@Anio", curso.Anio);
+                    cmd.Parameters.AddWithValue("@Activo", curso.Activo);
+
+                    conexion.Open();
+                    int filasAfectadas = cmd.ExecuteNonQuery();
+                    return filasAfectadas > 0;
+                }
+            }
+        }
     }
 }

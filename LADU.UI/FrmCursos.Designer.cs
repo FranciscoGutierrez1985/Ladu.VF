@@ -36,6 +36,7 @@
             anioDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             activoDataGridViewCheckBoxColumn = new DataGridViewCheckBoxColumn();
             cursoBindingSource = new BindingSource(components);
+            btnNuevo = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cursoBindingSource).BeginInit();
             SuspendLayout();
@@ -46,7 +47,7 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idCursoDataGridViewTextBoxColumn, nombreDataGridViewTextBoxColumn, divisionDataGridViewTextBoxColumn, anioDataGridViewTextBoxColumn, activoDataGridViewCheckBoxColumn });
             dataGridView1.DataSource = cursoBindingSource;
-            dataGridView1.Location = new Point(191, 166);
+            dataGridView1.Location = new Point(188, 67);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(486, 256);
             dataGridView1.TabIndex = 0;
@@ -86,11 +87,22 @@
             // 
             cursoBindingSource.DataSource = typeof(Entities.Curso);
             // 
+            // btnNuevo
+            // 
+            btnNuevo.Location = new Point(193, 368);
+            btnNuevo.Name = "btnNuevo";
+            btnNuevo.Size = new Size(75, 23);
+            btnNuevo.TabIndex = 1;
+            btnNuevo.Text = "Nuevo Curso";
+            btnNuevo.UseVisualStyleBackColor = true;
+            btnNuevo.Click += btnNuevo_Click;
+            // 
             // FrmCursos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(883, 542);
+            Controls.Add(btnNuevo);
             Controls.Add(dataGridView1);
             Name = "FrmCursos";
             Text = "FrmCursos";
@@ -109,5 +121,6 @@
         private DataGridViewTextBoxColumn anioDataGridViewTextBoxColumn;
         private DataGridViewCheckBoxColumn activoDataGridViewCheckBoxColumn;
         private BindingSource cursoBindingSource;
+        private Button btnNuevo;
     }
 }

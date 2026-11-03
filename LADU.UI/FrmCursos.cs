@@ -39,5 +39,14 @@ namespace LADU.UI
         {
 
         }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            FrmNuevoCurso frm = new FrmNuevoCurso();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                CargarCursos(); // Recarga la grilla automáticamente al guardar
+            }
+        }
     }
 }
