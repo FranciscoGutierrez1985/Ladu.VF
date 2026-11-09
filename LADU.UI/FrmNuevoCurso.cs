@@ -12,14 +12,33 @@ namespace LADU.UI
 {
     public partial class FrmNuevoCurso : Form
     {
+        private int? idCursoActual = null; // Si es null, es un alta. Si tiene valor, es edición.
+
+        // Constructor para NUEVO curso
         public FrmNuevoCurso()
         {
             InitializeComponent();
+            chkActivo.Checked = true;
+            chkActivo.Visible = false;
+        }
+
+        // Constructor para EDITAR curso (recibe el curso seleccionado)
+        public FrmNuevoCurso(Curso cursoAModificar) : this()
+        {
+            idCursoActual = cursoAModificar.IdCurso;
+            txtNombre.Text = cursoAModificar.Nombre;
+            txtDivision.Text = cursoAModificar.Division;
+            txtNumAnio.Text = cursoAModificar.Anio.ToString();
+            chkActivo.Checked = cursoAModificar.Activo;
+            
+            chkActivo.Visible = true;
+            
+
+            this.Text = "Modificar Curso"; // Cambiamos el título de la ventana
         }
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
-            // Validaciones básicas
             if (string.IsNullOrWhiteSpace(txtNombre.Text))
             {
                 MessageBox.Show("Por favor, ingrese el nombre del curso.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -28,7 +47,7 @@ namespace LADU.UI
 
             try
             {
-                Curso nuevoCurso = new Curso
+                Curso curso = new Curso
                 {
                     Nombre = txtNombre.Text.Trim(),
                     Division = txtDivision.Text.Trim(),
@@ -37,10 +56,25 @@ namespace LADU.UI
                 };
 
                 CursoRepository repo = new CursoRepository();
-                if (repo.InsertarCurso(nuevoCurso))
+                bool resultado = false;
+
+                if (idCursoActual == null)
                 {
-                    MessageBox.Show("Curso guardado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.DialogResult = DialogResult.OK; // Indica que guardó ok para recargar la grilla
+                    // Es un alta
+                    resultado = repo.InsertarCurso(curso);
+                }
+                else
+                {
+                    // Es una actualización
+                    curso.IdCurso = idCursoActual.Value;
+                    resultado = repo.ActualizarCurso(curso);
+                }
+
+                if (resultado)
+                {
+                    string mensaje = idCursoActual == null ? "Curso guardado correctamente." : "Curso actualizado correctamente.";
+                    MessageBox.Show(mensaje, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
             }
@@ -49,5 +83,6 @@ namespace LADU.UI
                 MessageBox.Show("Error al guardar el curso: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }

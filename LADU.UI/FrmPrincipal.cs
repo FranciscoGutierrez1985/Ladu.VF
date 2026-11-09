@@ -59,7 +59,7 @@ namespace LADU.UI
 
         }
 
-        private void btnCursosyMaterias_Click(object sender, EventArgs e)
+        private void btnCursos_Click(object sender, EventArgs e)
         {
             FrmCursos frm = new FrmCursos();
             frm.ShowDialog(); // Abre la ventana de cursos
@@ -77,6 +77,18 @@ namespace LADU.UI
             Form1 login = new Form1();
             login.ShowDialog();
             this.Close();
+        }
+
+        private void btnMaterias_Click(object sender, EventArgs e)
+        {
+            FrmMaterias frm = new FrmMaterias();
+            frm.ShowDialog();
+        }
+
+        private void btnAlumnos_Click(object sender, EventArgs e)
+        {
+            FrmAlumnos frm = new FrmAlumnos();
+            frm.ShowDialog(); // Abre la ventana de alumnos
         }
     }
 }

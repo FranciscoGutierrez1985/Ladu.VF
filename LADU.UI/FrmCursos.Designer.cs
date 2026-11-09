@@ -29,41 +29,101 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            dataGridView1 = new DataGridView();
-            idCursoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            nombreDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            dataGridViewCursos = new DataGridView();
+            cursoBindingSource = new BindingSource(components);
+            btnNuevo = new Button();
+            btnEditar = new Button();
+            btnEliminar = new Button();
+            btnGestionarMaterias = new Button();
+            btnGestionarAlumnos = new Button();
+            IdCurso = new DataGridViewTextBoxColumn();
+            Nombre = new DataGridViewTextBoxColumn();
             divisionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             anioDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             activoDataGridViewCheckBoxColumn = new DataGridViewCheckBoxColumn();
-            cursoBindingSource = new BindingSource(components);
-            btnNuevo = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewCursos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cursoBindingSource).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewCursos
             // 
-            dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idCursoDataGridViewTextBoxColumn, nombreDataGridViewTextBoxColumn, divisionDataGridViewTextBoxColumn, anioDataGridViewTextBoxColumn, activoDataGridViewCheckBoxColumn });
-            dataGridView1.DataSource = cursoBindingSource;
-            dataGridView1.Location = new Point(188, 67);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(486, 256);
-            dataGridView1.TabIndex = 0;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridViewCursos.AutoGenerateColumns = false;
+            dataGridViewCursos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCursos.Columns.AddRange(new DataGridViewColumn[] { IdCurso, Nombre, divisionDataGridViewTextBoxColumn, anioDataGridViewTextBoxColumn, activoDataGridViewCheckBoxColumn });
+            dataGridViewCursos.DataSource = cursoBindingSource;
+            dataGridViewCursos.Location = new Point(193, 64);
+            dataGridViewCursos.Name = "dataGridViewCursos";
+            dataGridViewCursos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewCursos.Size = new Size(545, 256);
+            dataGridViewCursos.TabIndex = 0;
+            dataGridViewCursos.CellContentClick += dataGridView1_CellContentClick;
+            dataGridViewCursos.CellFormatting += dataGridViewCursos_CellFormatting;
             // 
-            // idCursoDataGridViewTextBoxColumn
+            // cursoBindingSource
             // 
-            idCursoDataGridViewTextBoxColumn.DataPropertyName = "IdCurso";
-            idCursoDataGridViewTextBoxColumn.HeaderText = "IdCurso";
-            idCursoDataGridViewTextBoxColumn.Name = "idCursoDataGridViewTextBoxColumn";
+            cursoBindingSource.DataSource = typeof(Entities.Curso);
             // 
-            // nombreDataGridViewTextBoxColumn
+            // btnNuevo
             // 
-            nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            btnNuevo.Location = new Point(39, 64);
+            btnNuevo.Name = "btnNuevo";
+            btnNuevo.Size = new Size(75, 23);
+            btnNuevo.TabIndex = 1;
+            btnNuevo.Text = "Nuevo Curso";
+            btnNuevo.UseVisualStyleBackColor = true;
+            btnNuevo.Click += btnNuevo_Click;
+            // 
+            // btnEditar
+            // 
+            btnEditar.Location = new Point(39, 139);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(75, 23);
+            btnEditar.TabIndex = 2;
+            btnEditar.Text = "Editar";
+            btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.Location = new Point(39, 199);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(75, 23);
+            btnEliminar.TabIndex = 3;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
+            // 
+            // btnGestionarMaterias
+            // 
+            btnGestionarMaterias.Location = new Point(281, 372);
+            btnGestionarMaterias.Name = "btnGestionarMaterias";
+            btnGestionarMaterias.Size = new Size(125, 23);
+            btnGestionarMaterias.TabIndex = 4;
+            btnGestionarMaterias.Text = "Gestionar Materias";
+            btnGestionarMaterias.UseVisualStyleBackColor = true;
+            btnGestionarMaterias.Click += btnGestionarMaterias_Click;
+            // 
+            // btnGestionarAlumnos
+            // 
+            btnGestionarAlumnos.Location = new Point(421, 372);
+            btnGestionarAlumnos.Name = "btnGestionarAlumnos";
+            btnGestionarAlumnos.Size = new Size(120, 23);
+            btnGestionarAlumnos.TabIndex = 5;
+            btnGestionarAlumnos.Text = "Gestionar Alumnos";
+            btnGestionarAlumnos.UseVisualStyleBackColor = true;
+            btnGestionarAlumnos.Click += btnGestionarAlumnos_Click;
+            // 
+            // IdCurso
+            // 
+            IdCurso.DataPropertyName = "IdCurso";
+            IdCurso.HeaderText = "IdCurso";
+            IdCurso.Name = "IdCurso";
+            // 
+            // Nombre
+            // 
+            Nombre.DataPropertyName = "Nombre";
+            Nombre.HeaderText = "Nombre";
+            Nombre.Name = "Nombre";
             // 
             // divisionDataGridViewTextBoxColumn
             // 
@@ -82,45 +142,40 @@
             activoDataGridViewCheckBoxColumn.DataPropertyName = "Activo";
             activoDataGridViewCheckBoxColumn.HeaderText = "Activo";
             activoDataGridViewCheckBoxColumn.Name = "activoDataGridViewCheckBoxColumn";
-            // 
-            // cursoBindingSource
-            // 
-            cursoBindingSource.DataSource = typeof(Entities.Curso);
-            // 
-            // btnNuevo
-            // 
-            btnNuevo.Location = new Point(193, 368);
-            btnNuevo.Name = "btnNuevo";
-            btnNuevo.Size = new Size(75, 23);
-            btnNuevo.TabIndex = 1;
-            btnNuevo.Text = "Nuevo Curso";
-            btnNuevo.UseVisualStyleBackColor = true;
-            btnNuevo.Click += btnNuevo_Click;
+            activoDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
             // FrmCursos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(883, 542);
+            Controls.Add(btnGestionarAlumnos);
+            Controls.Add(btnGestionarMaterias);
+            Controls.Add(btnEliminar);
+            Controls.Add(btnEditar);
             Controls.Add(btnNuevo);
-            Controls.Add(dataGridView1);
+            Controls.Add(dataGridViewCursos);
             Name = "FrmCursos";
             Text = "FrmCursos";
             Load += FrmCursos_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewCursos).EndInit();
             ((System.ComponentModel.ISupportInitialize)cursoBindingSource).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn idCursoDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private DataGridView dataGridViewCursos;
+        private BindingSource cursoBindingSource;
+        private Button btnNuevo;
+        private Button btnEditar;
+        private Button btnEliminar;
+        private Button btnGestionarMaterias;
+        private Button btnGestionarAlumnos;
+        private DataGridViewTextBoxColumn IdCurso;
+        private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn divisionDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn anioDataGridViewTextBoxColumn;
         private DataGridViewCheckBoxColumn activoDataGridViewCheckBoxColumn;
-        private BindingSource cursoBindingSource;
-        private Button btnNuevo;
     }
 }

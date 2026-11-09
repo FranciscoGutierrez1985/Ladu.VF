@@ -33,8 +33,9 @@
             btnCerrarSesion = new ToolStripMenuItem();
             gestionToolStripMenuItem = new ToolStripMenuItem();
             panel1 = new Panel();
-            btnAsistencia = new Button();
-            btnCursosyMaterias = new Button();
+            btnAlumnos = new Button();
+            btnMaterias = new Button();
+            btnCursos = new Button();
             statusStripInfoUsuario = new StatusStrip();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
             lblBienvenida = new Label();
@@ -75,8 +76,9 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(btnAsistencia);
-            panel1.Controls.Add(btnCursosyMaterias);
+            panel1.Controls.Add(btnAlumnos);
+            panel1.Controls.Add(btnMaterias);
+            panel1.Controls.Add(btnCursos);
             panel1.Controls.Add(statusStripInfoUsuario);
             panel1.Controls.Add(lblBienvenida);
             panel1.Location = new Point(0, 27);
@@ -85,25 +87,35 @@
             panel1.TabIndex = 2;
             panel1.Paint += panel1_Paint;
             // 
-            // btnAsistencia
+            // btnAlumnos
             // 
-            btnAsistencia.Location = new Point(496, 212);
-            btnAsistencia.Name = "btnAsistencia";
-            btnAsistencia.Size = new Size(120, 75);
-            btnAsistencia.TabIndex = 3;
-            btnAsistencia.Text = "Asistencia";
-            btnAsistencia.UseVisualStyleBackColor = true;
-            btnAsistencia.Click += button2_Click;
+            btnAlumnos.Location = new Point(505, 234);
+            btnAlumnos.Name = "btnAlumnos";
+            btnAlumnos.Size = new Size(120, 75);
+            btnAlumnos.TabIndex = 5;
+            btnAlumnos.Text = "Alumnos";
+            btnAlumnos.UseVisualStyleBackColor = true;
+            btnAlumnos.Click += btnAlumnos_Click;
             // 
-            // btnCursosyMaterias
+            // btnMaterias
             // 
-            btnCursosyMaterias.Location = new Point(294, 212);
-            btnCursosyMaterias.Name = "btnCursosyMaterias";
-            btnCursosyMaterias.Size = new Size(120, 75);
-            btnCursosyMaterias.TabIndex = 2;
-            btnCursosyMaterias.Text = "Cursos y Materias";
-            btnCursosyMaterias.UseVisualStyleBackColor = true;
-            btnCursosyMaterias.Click += btnCursosyMaterias_Click;
+            btnMaterias.Location = new Point(257, 234);
+            btnMaterias.Name = "btnMaterias";
+            btnMaterias.Size = new Size(120, 75);
+            btnMaterias.TabIndex = 4;
+            btnMaterias.Text = "Materias";
+            btnMaterias.UseVisualStyleBackColor = true;
+            btnMaterias.Click += btnMaterias_Click;
+            // 
+            // btnCursos
+            // 
+            btnCursos.Location = new Point(386, 133);
+            btnCursos.Name = "btnCursos";
+            btnCursos.Size = new Size(120, 75);
+            btnCursos.TabIndex = 2;
+            btnCursos.Text = "Cursos";
+            btnCursos.UseVisualStyleBackColor = true;
+            btnCursos.Click += btnCursos_Click;
             // 
             // statusStripInfoUsuario
             // 
@@ -162,7 +174,8 @@
         private Label lblBienvenida;
         private StatusStrip statusStripInfoUsuario;
         private ToolStripStatusLabel toolStripStatusLabel1;
-        private Button btnCursosyMaterias;
-        private Button btnAsistencia;
+        private Button btnCursos;
+        private Button btnMaterias;
+        private Button btnAlumnos;
     }
 }

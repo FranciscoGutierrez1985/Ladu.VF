@@ -43,21 +43,21 @@
             // 
             txtNombre.Location = new Point(201, 41);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(100, 23);
+            txtNombre.Size = new Size(208, 23);
             txtNombre.TabIndex = 0;
             // 
             // txtDivision
             // 
             txtDivision.Location = new Point(201, 88);
             txtDivision.Name = "txtDivision";
-            txtDivision.Size = new Size(100, 23);
+            txtDivision.Size = new Size(208, 23);
             txtDivision.TabIndex = 1;
             // 
             // txtNumAnio
             // 
             txtNumAnio.Location = new Point(201, 135);
             txtNumAnio.Name = "txtNumAnio";
-            txtNumAnio.Size = new Size(100, 23);
+            txtNumAnio.Size = new Size(208, 23);
             txtNumAnio.TabIndex = 2;
             // 
             // chkActivo
@@ -67,9 +67,9 @@
             chkActivo.CheckState = CheckState.Checked;
             chkActivo.Location = new Point(70, 208);
             chkActivo.Name = "chkActivo";
-            chkActivo.Size = new Size(82, 19);
+            chkActivo.Size = new Size(60, 19);
             chkActivo.TabIndex = 3;
-            chkActivo.Text = "checkBox1";
+            chkActivo.Text = "Activo";
             chkActivo.UseVisualStyleBackColor = true;
             // 
             // btnguardar
@@ -84,9 +84,10 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(217, 267);
+            btnCancelar.DialogResult = DialogResult.Cancel;
+            btnCancelar.Location = new Point(211, 267);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(122, 46);
+            btnCancelar.Size = new Size(112, 46);
             btnCancelar.TabIndex = 5;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;

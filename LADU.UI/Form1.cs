@@ -39,11 +39,22 @@ namespace LADU.UI
                     // Ocultamos el login actual
                     this.Hide();
 
-                    // Abrimos el formulario principal pasándole el objeto usuario
-                    FrmPrincipal principal = new FrmPrincipal(usuario);
-                    principal.ShowDialog();
+                    // Verificamos el rol del usuario para redirigirlo a su pantalla correspondiente
+                    // (Asegurate de que la propiedad en tu clase Usuario se llame "Rol" o cambiala por el nombre real)
+                    if (usuario.NombreRol == "Docente")
+                    {
+                        // Abrimos la pantalla exclusiva para el docente
+                        FrmMenuDocente frmDocente = new FrmMenuDocente();
+                        frmDocente.ShowDialog();
+                    }
+                    else
+                    {
+                        // Si es Administrador, Secretaría, etc., abre el menú completo
+                        FrmPrincipal principal = new FrmPrincipal(usuario);
+                        principal.ShowDialog();
+                    }
 
-                    // Cuando se cierre el principal, cerramos toda la aplicación
+                    // Cuando se cierre cualquiera de las dos ventanas, cerramos toda la aplicación
                     this.Close();
                 }
                 else
