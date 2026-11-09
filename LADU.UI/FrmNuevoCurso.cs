@@ -49,10 +49,5 @@ namespace LADU.UI
                 MessageBox.Show("Error al guardar el curso: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-            private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
     }
-   
 }
