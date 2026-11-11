@@ -80,6 +80,7 @@
             btnCerrarSesion.TabIndex = 4;
             btnCerrarSesion.Text = "Cerra Sesion";
             btnCerrarSesion.UseVisualStyleBackColor = true;
+            btnCerrarSesion.Click += btnCerrarSesion_Click;
             // 
             // FrmMenuDocente
             // 
