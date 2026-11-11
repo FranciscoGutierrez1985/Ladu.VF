@@ -222,5 +222,42 @@ namespace LADU.Data
             }
             return listaAlumnos;
         }
+
+        public List<Curso> ObtenerCursosPorDocente(int idUsuarioDocente)
+        {
+            var listaCursos = new List<Curso>();
+
+            using (SqlConnection conexion = ConnectionFactory.ObtenerConexion())
+            {
+                using (SqlCommand comando = new SqlCommand("SP_ObtenerCursosPorDocente", conexion))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.AddWithValue("@id_usuario", idUsuarioDocente);
+
+                    try
+                    {
+                        conexion.Open();
+                        using (SqlDataReader reader = comando.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Curso curso = new Curso
+                                {
+                                    IdCurso = Convert.ToInt32(reader["IdCurso"]),
+                                    Nombre = reader["Nombre"].ToString()
+                                };
+                                listaCursos.Add(curso);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("Error al obtener los cursos del docente: " + ex.Message);
+                    }
+                }
+            }
+
+            return listaCursos;
+        }
     }
 }

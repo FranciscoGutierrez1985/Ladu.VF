@@ -44,7 +44,7 @@ namespace LADU.UI
                     if (usuario.NombreRol == "Docente")
                     {
                         // Abrimos la pantalla exclusiva para el docente
-                        FrmMenuDocente frmDocente = new FrmMenuDocente();
+                        FrmMenuDocente frmDocente = new FrmMenuDocente(usuario);
                         frmDocente.ShowDialog();
                     }
                     else
