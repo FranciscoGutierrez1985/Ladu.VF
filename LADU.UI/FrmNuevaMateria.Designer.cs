@@ -74,9 +74,9 @@
             chkActivo.AutoSize = true;
             chkActivo.Location = new Point(36, 186);
             chkActivo.Name = "chkActivo";
-            chkActivo.Size = new Size(82, 19);
+            chkActivo.Size = new Size(60, 19);
             chkActivo.TabIndex = 4;
-            chkActivo.Text = "checkBox1";
+            chkActivo.Text = "Activo";
             chkActivo.UseVisualStyleBackColor = true;
             // 
             // btnGuardar
