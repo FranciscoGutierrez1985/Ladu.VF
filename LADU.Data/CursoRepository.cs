@@ -91,7 +91,7 @@ namespace LADU.Data
             }
         }
 
-        public bool AsignarMateriaACurso(int idCurso, int idMateria)
+        public bool AsignarMateriaACurso(int idCurso, int idMateria, int idUsuario)
         {
             using (SqlConnection conexion = ConnectionFactory.ObtenerConexion())
             {
@@ -100,6 +100,7 @@ namespace LADU.Data
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@IdCurso", idCurso);
                     cmd.Parameters.AddWithValue("@IdMateria", idMateria);
+                    cmd.Parameters.AddWithValue("@IdUsuario", idUsuario);
 
                     conexion.Open();
                     int filasAfectadas = cmd.ExecuteNonQuery();
